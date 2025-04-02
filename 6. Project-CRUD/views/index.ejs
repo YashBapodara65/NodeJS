@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Task Form</h1>
+    <form action="/addTask" method="post">
+        <input type="text" placeholder="Enter your task title" name="title">
+        <select name="priority" id="">
+            <option selected disabled>Select Priority</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+        </select>
+        <select name="status" id="">
+            <option selected disabled>Select Status</option>
+            <option value="pending">Pending</option>
+            <option value="complete">Complete</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Sr. No.</td>
+                <td>Title</td>
+                <td>Priority</td>
+                <td>Status</td>
+                <td colspan="2">Operation</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%task_record.map((e)=>{%>
+            <tr>
+                <td><%=e.id%></td>
+                <td><%=e.title%></td>
+                <td><%=e.priority%></td>
+                <td><%=e.status%></td>
+                <td><a href="/editTask/<%=e.id%>"><button>Edit</button></a></td>
+                <td><a href="/deleteTask?id=<%=e.id%>"><button>Delete</button></a></td>
+            </tr>   
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

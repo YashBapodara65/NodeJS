@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Task Form</h1>
+    <form action="/updateTask" method="post">
+        <input type="text" value="<%=single_task.id%>" name="id" hidden>
+        <input type="text" placeholder="Enter your task title" value="<%=single_task.title%>" name="title">
+        <select name="priority" id="">
+            <option disabled>Select Priority</option>
+            <option value="high" <%=(single_task.priority == "high") ? "selected" : ""%>>High</option>
+            <option value="low" <%=(single_task.priority == "low") ? "selected" : ""%>>Low</option>
+            <option value="medium" <%=(single_task.priority == "medium") ? "selected" : ""%>>Medium</option>
+        </select>
+        <select name="status" id="">
+            <option disabled>Select Status</option>
+            <option value="pending" <%=(single_task.status == "pending") ? "selected" : ""%>>Pending</option>
+            <option value="complete" <%=(single_task.status == "complete") ? "selected" : ""%>>Complete</option>
+        </select>
+        <button type="submit">Update Task</button>
+    </form>
+</body>
+</html>

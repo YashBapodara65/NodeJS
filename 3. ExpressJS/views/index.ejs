@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Node.JS</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate provident a voluptatibus sequi corrupti saepe earum, dolorem aperiam ipsa necessitatibus illo beatae enim eaque? Eius ratione dolorem omnis beatae vero, sunt labore, nihil hic praesentium provident atque vel maiores error et est iusto nulla voluptatem necessitatibus at sed cum! Incidunt maxime consectetur cum accusantium ipsa at repellat odit, tenetur aliquid quos quod facere cupiditate vel quae, blanditiis rem porro. Enim distinctio minus maiores, sit minima saepe, sed nemo unde quas error corrupti vel necessitatibus expedita. Vero, culpa hic? Omnis, id dolores officiis voluptas doloremque labore consectetur beatae vero molestiae vel.</p>
+    <button>Click</button>
+    <table border="2" width="100%">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>subject</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%students.map((e,i)=>{%>
+            <tr>
+                <td><%=e.id%></td>
+                <td><%=e.name%></td>
+                <td><%=e.subject%></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Node.JS</h1>
+    <form action="/addData" method="post">
+        <input type="text" placeholder="Enter your name" name="name"><br/>
+        <input type="text" placeholder="Enter your subject" name="subject"><br/>
+        <input type="submit">
+    </form>
+    <table border="2" width="100%">
+        <thead>
+            <tr>
+                <td style="text-align: center;">Id</td>
+                <td style="text-align: center;">Name</td>
+                <td style="text-align: center;">subject</td>
+                <td style="text-align: center;">Edit</td>
+                <td style="text-align: center;">Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%students.map((e,i)=>{%>
+            <tr>
+                <td style="text-align: center;"><%=e.id%></td>
+                <td style="text-align: center;"><%=e.name%></td>
+                <td style="text-align: center;"><%=e.subject%></td>
+                <td style="text-align: center;"><a href="/editData/<%=e.id%>"><button>Edit</button></a></td>
+                <td style="text-align: center;"><a href="/deleteData?id=<%=e.id%>"><button>Delete</button></a></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>
