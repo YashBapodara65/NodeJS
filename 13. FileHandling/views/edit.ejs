@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Node.JS</h1>
+    <form action="/updateData" method="post">
+        <input type="text" placeholder="Enter your name" value="<%=data.id%>" hidden name="id"><br/>
+        <input type="text" placeholder="Enter your name" value="<%=data.name%>" name="name"><br/>
+        <input type="text" placeholder="Enter your subject" value="<%=data.subject%>" name="subject"><br/>
+        <input type="text" placeholder="Enter your city" value="<%=data.city%>" name="city"><br/>
+        <input type="submit">
+    </form>
+</body>
+</html>

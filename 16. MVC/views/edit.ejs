@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateRecord" method="post" enctype="multipart/form-data">
+        <input type="text" hidden value="<%=data.id%>" name="id"><br/>
+        <input type="text" value="<%=data.title%>" name="title"><br/>
+        <input type="file" name="image_field"><br/>
+        <button type="submit">Update</button>
+    </form>
+    <div>
+        <img width="100px" src="<%=data.image_path%>" alt="">
+    </div>
+</body>
+</html>
