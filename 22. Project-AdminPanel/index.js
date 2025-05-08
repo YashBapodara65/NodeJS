@@ -23,8 +23,8 @@ app.use(session({
     cookie : {maxAge : 100 * 100 * 60} // for 10 minutes
 }))
 
-app.use(passport.session());
 app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/",require("./routes/route"));
 app.listen(port,(err)=>{

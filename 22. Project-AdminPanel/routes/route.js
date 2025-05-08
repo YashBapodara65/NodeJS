@@ -17,4 +17,6 @@ route.get("/deleteRecord",passportSt.checkAuth,ctl.deleteRecord);
 route.post("/addRecord",middleware,ctl.addRecord);
 route.post("/updateRecord",middleware,ctl.updateRecord);
 
+route.get("/profile",passportSt.checkAuth,ctl.profile);
+
 module.exports = route;

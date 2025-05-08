@@ -18,6 +18,10 @@ module.exports.dashboard = (req,res) => {
     res.render("index");
 }
 
+module.exports.profile = (req,res) => {
+    res.render("profile")
+}
+
 module.exports.addAdmin = (req,res) => {
     res.render("addAdmin");
 }
