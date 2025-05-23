@@ -26,6 +26,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title fw-semibold mb-4">Forms</h5>
+                                <%if(locals.flash.success.length > 0){%>
+                                    <div class="alert alert-primary" role="alert">
+                                        <%=locals.flash.success%>
+                                    </div>
+                                    <%}%>
                                 <div class="card">
                                     <div class="card-body">
                                         <form method="post" action="/addRecord" enctype="multipart/form-data">

@@ -15,5 +15,9 @@ route.get("/editRecord",passportSt.checkAuth,ctl.editRecord);
 route.post("/updateRecord",passportSt.checkAuth,multer,ctl.updateRecord);
 route.get("/deleteRecord",passportSt.checkAuth,ctl.deleteRecord);
 route.get("/profile",passportSt.checkAuth,ctl.profile);
+route.get("/changePassword",passportSt.checkAuth,ctl.changePassword);
+route.post("/changePassword",passportSt.checkAuth,ctl.changePasswordRecord);
+route.post("/lostPassword",ctl.lostPassword);
+route.post("/verifyPass",ctl.verifyPass);
 
 module.exports = route;

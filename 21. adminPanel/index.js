@@ -5,6 +5,8 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const session = require("express-session");
+const connectFlash = require("connect-flash");
+const flash = require("./middleware/flash")
 
 const app = express();
 
@@ -24,6 +26,9 @@ app.use(session({
 
 app.use(passport.session());
 app.use(passport.initialize());
+
+app.use(connectFlash());
+app.use(flash.setFlash);
 
 app.use("/",require("./routes/route"));
 

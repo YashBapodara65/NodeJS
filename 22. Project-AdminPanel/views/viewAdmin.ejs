@@ -24,6 +24,11 @@
                     <!--  Header End -->
                     <div class="container-fluid">
                         <div class="table-responsive mb-5 rounded-3 shadow-sm">
+                          <%if(locals.flash.success.length > 0){%>
+                            <div class="alert alert-primary" role="alert">
+                                <%=locals.flash.success%>
+                            </div>
+                            <%}%>
                             <table class="table table-hover table-striped align-middle mb-0 bg-white">
                               <thead class="table-light text-uppercase text-secondary small">
                                 <tr>
@@ -39,7 +44,7 @@
                                     <tr>
                                         <td class="fw-semibold text-center text-dark"><%=i+1%></td>
                                         <td class="fw-semibold text-center text-dark"><%=e.fullname%></td>
-                                        <td class="text-center">john@example.com</td>
+                                        <td class="text-center"><%=e.email%></td>
                                         <td class="text-center"><img width="100px" src="<%=e.profile%>" alt=""></td>
                                         <td class="text-end">
                                           <a href="/editRecord?id=<%=e.id%>"><button class="btn btn-sm btn-outline-primary">Edit</button></a>

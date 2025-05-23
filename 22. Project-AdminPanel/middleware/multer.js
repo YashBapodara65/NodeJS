@@ -9,6 +9,6 @@ const Storage = multer.diskStorage({
     }
 })
 
-const uploads = multer({storage:Storage}).single("profile_photo");
+const uploads = multer({storage:Storage});
 
 module.exports = uploads;

@@ -14,9 +14,19 @@ route.get("/viewAdmin",passportSt.checkAuth,ctl.viewAdmin);
 
 route.get("/editRecord",passportSt.checkAuth,ctl.editAdmin);
 route.get("/deleteRecord",passportSt.checkAuth,ctl.deleteRecord);
-route.post("/addRecord",middleware,ctl.addRecord);
-route.post("/updateRecord",middleware,ctl.updateRecord);
+route.post("/addRecord",middleware.single("profile_photo"),ctl.addRecord);
+route.post("/updateRecord",middleware.single("profile_photo"),ctl.updateRecord);
+
+route.get("/changePassword",passportSt.checkAuth,ctl.changePassword);
+
+route.post("/updatePassword",ctl.updatePassword);
 
 route.get("/profile",passportSt.checkAuth,ctl.profile);
+
+route.get("/forgotPassword",ctl.forgotPassword);
+
+route.post("/forgotPasswordData",ctl.forgotPasswordData);
+
+route.post("/verifyPassword",ctl.verifyPassword);
 
 module.exports = route;

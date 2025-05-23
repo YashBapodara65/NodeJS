@@ -5,6 +5,8 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const session = require("express-session");
+const connectFlash = require("connect-flash");
+const flash = require("./middleware/flash");
 
 const app = express();
 
@@ -23,10 +25,17 @@ app.use(session({
     cookie : {maxAge : 100 * 100 * 60} // for 10 minutes
 }))
 
+app.use(connectFlash());
+app.use(flash.setFlash);
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/",require("./routes/route"));
+app.use("/category",require("./routes/category"));
+app.use("/subcategory",require("./routes/subcat"));
+app.use("/product",require("./routes/product"));
+
 app.listen(port,(err)=>{
     err ? console.log(err) : console.log("Server started on port :- "+port);
 })
